@@ -1,0 +1,297 @@
+[
+{
+  "model": "LeaveManager.leaveaccruement",
+  "pk": 1,
+  "fields": {
+    "dtm_created": "2023-11-17T06:10:37.034Z",
+    "dtm_updated": "2023-11-17T06:10:37.034Z",
+    "rate": 1.25,
+    "unit": "month"
+  }
+},
+{
+  "model": "LeaveManager.leavetype",
+  "pk": 1,
+  "fields": {
+    "dtm_created": "2023-11-17T06:13:26.700Z",
+    "dtm_updated": "2023-11-17T06:13:26.700Z",
+    "name": "Earned Leave",
+    "carry_forward_days": 5,
+    "is_encashable": false,
+    "encash_offset_days": null,
+    "leaves_available": 0,
+    "accruement": 1
+  }
+},
+{
+  "model": "LeaveManager.leavetype",
+  "pk": 2,
+  "fields": {
+    "dtm_created": "2023-11-17T06:13:55.185Z",
+    "dtm_updated": "2023-11-17T06:13:55.185Z",
+    "name": "Sick Leave",
+    "carry_forward_days": 0,
+    "is_encashable": false,
+    "encash_offset_days": null,
+    "leaves_available": 9,
+    "accruement": null
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 1,
+  "fields": {
+    "dtm_created": "2023-11-17T03:41:51.571Z",
+    "dtm_updated": "2023-11-17T06:53:13.836Z",
+    "name": "VIshal Apte",
+    "user": 2,
+    "department": "IT",
+    "designation": "CEO",
+    "reporting_manager": null,
+    "doj": "2018-10-01",
+    "address": "Belvedere, Aundh",
+    "contact_number": "9999999999",
+    "email_id": "foo@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 2,
+  "fields": {
+    "dtm_created": "2023-11-17T03:44:10.809Z",
+    "dtm_updated": "2023-11-17T06:53:01.089Z",
+    "name": "Parag Sathaye",
+    "user": 3,
+    "department": "IT",
+    "designation": "CTO",
+    "reporting_manager": 1,
+    "doj": "2021-12-01",
+    "address": "yo",
+    "contact_number": "8888888888",
+    "email_id": "foo1@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 3,
+  "fields": {
+    "dtm_created": "2023-11-17T04:25:59.152Z",
+    "dtm_updated": "2023-11-17T06:52:48.609Z",
+    "name": "Tejas Udhalikar",
+    "user": 4,
+    "department": "IT",
+    "designation": "SSE",
+    "reporting_manager": 2,
+    "doj": "2023-04-03",
+    "address": "yo",
+    "contact_number": "7777777777",
+    "email_id": "foo2@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 4,
+  "fields": {
+    "dtm_created": "2023-11-17T04:29:03.486Z",
+    "dtm_updated": "2023-11-17T04:29:03.486Z",
+    "name": "Shubham Parajapati",
+    "user": null,
+    "department": "ANALYSIS",
+    "designation": "BA",
+    "reporting_manager": 1,
+    "doj": "2021-09-01",
+    "address": "yoohoo",
+    "contact_number": "6565656565",
+    "email_id": "foo3@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 5,
+  "fields": {
+    "dtm_created": "2023-11-17T04:29:57.870Z",
+    "dtm_updated": "2023-11-17T04:29:57.870Z",
+    "name": "Vasudev Sharma",
+    "user": null,
+    "department": "ANALYSIS",
+    "designation": "BA",
+    "reporting_manager": 4,
+    "doj": "2022-06-01",
+    "address": "yoho",
+    "contact_number": "4545454545",
+    "email_id": "foo4@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.employee",
+  "pk": 6,
+  "fields": {
+    "dtm_created": "2023-11-17T04:30:44.217Z",
+    "dtm_updated": "2023-11-17T04:30:44.217Z",
+    "name": "Pushpendra Tripathi",
+    "user": null,
+    "department": "IT",
+    "designation": "SE",
+    "reporting_manager": 2,
+    "doj": "2022-05-01",
+    "address": "uoho",
+    "contact_number": "7070707070",
+    "email_id": "foo6@bar.com"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 1,
+  "fields": {
+    "dtm_created": "2023-11-17T10:50:12.852Z",
+    "dtm_updated": "2023-11-17T10:50:12.852Z",
+    "name": "New Years",
+    "date": "2024-01-01"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 2,
+  "fields": {
+    "dtm_created": "2023-11-17T10:50:46.557Z",
+    "dtm_updated": "2023-11-17T10:50:46.557Z",
+    "name": "Republic Day",
+    "date": "2024-01-26"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 3,
+  "fields": {
+    "dtm_created": "2023-11-17T10:51:32.742Z",
+    "dtm_updated": "2023-11-17T10:51:32.742Z",
+    "name": "Maharashtra day",
+    "date": "2024-05-01"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 4,
+  "fields": {
+    "dtm_created": "2023-11-17T10:51:58.903Z",
+    "dtm_updated": "2023-11-17T10:51:58.903Z",
+    "name": "Independence Day",
+    "date": "2024-08-15"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 5,
+  "fields": {
+    "dtm_created": "2023-11-17T10:52:22.514Z",
+    "dtm_updated": "2023-11-17T10:52:22.514Z",
+    "name": "Gandhi jayanti",
+    "date": "2024-10-02"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 6,
+  "fields": {
+    "dtm_created": "2023-11-17T10:52:55.349Z",
+    "dtm_updated": "2023-11-17T10:52:55.349Z",
+    "name": "Holi",
+    "date": "2024-03-25"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 7,
+  "fields": {
+    "dtm_created": "2023-11-17T10:53:31.364Z",
+    "dtm_updated": "2023-11-17T10:53:31.364Z",
+    "name": "Ganesh Chaturthi",
+    "date": "2024-09-06"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 8,
+  "fields": {
+    "dtm_created": "2023-11-17T10:53:56.161Z",
+    "dtm_updated": "2023-11-17T10:53:56.161Z",
+    "name": "Dussehra",
+    "date": "2024-10-11"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 9,
+  "fields": {
+    "dtm_created": "2023-11-17T10:54:18.770Z",
+    "dtm_updated": "2023-11-17T10:54:18.770Z",
+    "name": "Diwali",
+    "date": "2024-11-01"
+  }
+},
+{
+  "model": "LeaveManager.holiday",
+  "pk": 10,
+  "fields": {
+    "dtm_created": "2023-11-17T10:55:22.066Z",
+    "dtm_updated": "2023-11-17T10:55:22.066Z",
+    "name": "Diwali",
+    "date": "2024-11-04"
+  }
+},
+{
+  "model": "LeaveManager.leaverequest",
+  "pk": 19,
+  "fields": {
+    "dtm_created": "2023-11-17T13:45:01.717Z",
+    "dtm_updated": "2023-11-17T13:48:52.480Z",
+    "slug": "LIEifZUmHyClczOe",
+    "employee": 3,
+    "leave_type": 1,
+    "reason": "tehhg",
+    "from_date": "2023-11-20",
+    "to_date": "2023-11-23",
+    "status": "approved"
+  }
+},
+{
+  "model": "LeaveManager.leave",
+  "pk": 43,
+  "fields": {
+    "dtm_created": "2023-11-17T13:48:52.513Z",
+    "dtm_updated": "2023-11-17T13:48:52.513Z",
+    "request": 19,
+    "date": "2023-11-20"
+  }
+},
+{
+  "model": "LeaveManager.leave",
+  "pk": 44,
+  "fields": {
+    "dtm_created": "2023-11-17T13:48:52.513Z",
+    "dtm_updated": "2023-11-17T13:48:52.513Z",
+    "request": 19,
+    "date": "2023-11-23"
+  }
+},
+{
+  "model": "LeaveManager.leave",
+  "pk": 45,
+  "fields": {
+    "dtm_created": "2023-11-17T13:48:52.515Z",
+    "dtm_updated": "2023-11-17T13:48:52.515Z",
+    "request": 19,
+    "date": "2023-11-21"
+  }
+},
+{
+  "model": "LeaveManager.leave",
+  "pk": 46,
+  "fields": {
+    "dtm_created": "2023-11-17T13:48:52.516Z",
+    "dtm_updated": "2023-11-17T13:48:52.516Z",
+    "request": 19,
+    "date": "2023-11-22"
+  }
+}
+]

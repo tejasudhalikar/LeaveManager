@@ -1,0 +1,54 @@
+{% extends 'leavemanager/_leavemanager.html' %}
+
+{% block qux_page_title %}
+Leave Management
+{% endblock qux_page_title %}
+
+{% block qux_page_content %}
+{% if object_list %}
+<table class="table table-hover table-borderless mb-0">
+    <thead>
+        <tr class="bg-secondary text-white">
+            <th scope="col">employee</th>
+            <th scope="col">Type</th>
+            <th scope="col">From date</th>
+            <th scope="col">To date</th>
+            <th scope="col">Reason</th>
+            <th scope="col">Status</th>
+            <th style="width: 40px;"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in object_list %}
+        <tr class="py-1 bg-light">
+            <td class="tcell">{{ item.employee }}</td>
+            <td class="tcell">{{ item.leave_type }}</td>
+            <td class="tcell">{{ item.from_date }}</td>
+            <td class="tcell">{{ item.to_date }}</td>
+            <td class="tcell">{{ item.reason }}</td>
+            <td class="tcell">{{ item.status }}</td>
+            <!-- <td>
+                <a href="{% url 'leavemanager:approve' item.slug %}" class="btn btn-primary" style="margin-top: 4px; margin-right: 40px; float: right">Approve</a>
+                <a href="{% url 'leavemanager:approve' item.slug %}" class="btn btn-primary" style="margin-top: 4px; margin-right: 40px; float: left">Reject</a>
+            </td> -->
+            <!-- <td>{% include "leavemanager/list/menu.html" with item=item %}</td> -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{% endif %}
+<div class="btn btn-primary"
+    style="margin-top: 40px; margin-right: 40px; float: right;">
+    <a href="{% url 'leavemanager:create' %}">
+        <i class="fas fa-plus"></i> Create
+    </a>
+</div>
+<div class="btn btn-primary"
+    style="margin-top: 40px; margin-right: 40px; float: right;">
+    <a href="{% url 'leavemanager:create' %}">
+        <i class="fas fa-plus"></i> Create
+    </a>
+</div>
+{% endblock qux_page_content %}

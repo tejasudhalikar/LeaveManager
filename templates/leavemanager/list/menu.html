@@ -1,0 +1,44 @@
+<style>
+    .nav-item.dropdown {
+        width: 20px;
+        margin-top: 4px;
+        margin-right: 40px;
+        float: right;
+        background-color: rgb(207, 187, 187);
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+    }
+
+    .dropdown-menu {
+        background-color: #333; /* Background color of the dropdown menu */
+        border: 1px solid #555; /* Border color of the dropdown menu */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for the dropdown menu */
+    }
+
+    .dropdown-item {
+        color: white;
+    }
+
+    .dropdown-item:hover {
+        background-color: #555; /* Background color on hover */
+    }
+</style>
+
+<div class="nav-item dropdown" style="width: 20px; margin-top: 4px; margin-right: 40px; float: right;background-color: rgb(208, 30, 30);">
+    <a href="#"
+        id="dropdownLeaveRequest_{{ item.slug }}"
+        class="nav-link ms-auto"
+        role="button"
+        data-bs-toggle="dropdown">
+        <i class="fa-regular fa-fw fa-bars"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="dropdownLeaveRequest_{{ item.slug }}">
+        <li class="dropdown-item">
+            <a href="{% url 'leavemanager:approve' item.slug %}">Approve</a>
+        </li>
+    </ul>
+</div>

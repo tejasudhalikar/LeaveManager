@@ -1,0 +1,79 @@
+{% extends '_blank.html' %}
+{% block qux_page_title %}
+  Futures | Create
+{% endblock qux_page_title %}
+
+{% block qux_page_content %}
+{% include 'leavemanager/create_form.html' %}
+{% endblock qux_page_content %}
+
+{% block customjs %}
+<script>
+function ajax(url, params, callback) {
+    let httpRequest = new XMLHttpRequest();
+  
+    if (params) {
+      url = url + "?" + params;
+    }
+  
+    httpRequest.open("GET", url, true);
+    showLoader();
+    httpRequest.onreadystatechange = function () {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          callback(httpRequest.responseText);
+          removeLoader();
+        } else if (httpRequest.status == 500) {
+          callback('\{"description": "Not Found"\}');
+          removeLoader();
+        }
+      }
+    }
+  
+    if (params) {
+      httpRequest.send(params);
+    } else {
+      httpRequest.send();
+    }
+  }  
+
+function validateReason() {
+  let nameel = document.getElementById("reason");
+  if (nameel.value.length <= 0) nameel.classList.add("is-invalid");
+  else nameel.classList.remove("is-invalid");
+}
+
+function validateDate() {
+  console.log("Date called!!")
+  let fromdel = document.getElementById("id_fromdate");
+  var fromDate = new Date(fromdel.value);
+  var today = new Date();
+
+  if (fromDate < today) fromdel.classList.add("is-invalid");
+  else fromdel.classList.remove("is-invalid");
+
+  let todel = document.getElementById("id_todate");
+  var toDate = new Date(todel.value);
+
+  if (toDate < fromDate) todel.classList.add("is-invalid");
+  else todel.classList.remove("is-invalid");
+}
+
+
+function customSubmit(event) {
+  console.log("customSubmit called!!")
+  validateDate();
+  console.log("Date called!!")
+  validateReason();
+  console.log("all validated called!!")
+  if (document.getElementsByClassName("is-invalid").length > 0) {
+    event.preventDefault();
+  }
+  else {
+    showLoader();
+  }
+
+}
+document.getElementById("submit").addEventListener("click", customSubmit);
+</script>
+{% endblock %}

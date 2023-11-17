@@ -11,7 +11,7 @@ def default_app_setting_to_project(setting, default):
     return os.getenv(setting, getattr(settings, setting, default))
 
 
-QUXAPP_SETTING="Qux"
+QUXAPP_SETTING = "Qux"
 
 # Examples
 DATA_DIR = default_project_setting_to_app("DATA_DIR", "/dev/null")

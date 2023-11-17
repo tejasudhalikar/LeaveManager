@@ -1,0 +1,80 @@
+<link rel="stylesheet"
+    href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row align-items-center my-md-3">
+        <label class="col-12 col-lg-3 col-xl-2 col-form-label" for="leave_type">Leave
+            Type</label>
+        <div class="col-12 col-sm">
+            <select id="leave_type" name="leave_type" class="form-select">
+                <option>---</option>
+                {% for lt in lt_list %}
+                <option value="{{ lt.id }}">{{ lt.name|upper }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="row align-items-center my-md-3">
+        <label class="col-12 col-lg-3 col-xl-2 col-form-label" for="from_date">From
+            date</label>
+        <div class="col-12 col-sm">
+            <input type="text" id="id_fromdate" name="from_date"
+                value="{{ form.from_date }}" required>
+        </div>
+    </div>
+
+    <div class="row align-items-center my-md-3">
+        <label class="col-12 col-lg-3 col-xl-2 col-form-label" for="to_date">To
+            date</label>
+        <div class="col-12 col-sm">
+            <input type="text" id="id_todate" name="to_date"
+                value="{{ form.to_date }}" required>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <!-- Name -->
+        <label class="col-12 col-lg-3 col-xl-2 col-form-label" for="name">Reason</label>
+        <div class="col-12 col-sm">
+            <input type="text"
+                id="reason"
+                name="reason"
+                class="form-control"
+                placeholder="reason"
+                required />
+        </div>
+    </div>
+
+    <div class="row my-md-3">
+        <div class="col-12 offset-lg-3 col-lg-9 offset-xl-2 col-xl-10">
+            <div class="d-grid">
+                <button id="submit" type="submit" class="btn btn-primary py-2">
+                    Apply
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<style>
+  .datepicker {
+      width: 50px;
+      display: inline-block;
+  }
+</style>
+
+<script>
+  $(function() {
+      $("#id_fromdate").datepicker();
+  });
+</script>
+
+<script>
+    $(function() {
+        $("#id_todate").datepicker();
+    });
+</script>

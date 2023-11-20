@@ -68,6 +68,7 @@ class LeaveAccruementAdmin(admin.ModelAdmin):
     list_display = fields
     readonly_fields = ("id",)
 
+
 @admin.register(Holiday)
 class HolidayAdmin(admin.ModelAdmin):
     fields = (

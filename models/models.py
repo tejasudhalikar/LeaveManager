@@ -128,6 +128,7 @@ class Holiday(CoreModel):
             holiday_list.append(holiday.date)
         return holiday_list
 
+
 class LeaveRequest(CoreModel):
     slug = models.CharField(max_length=16, unique=True)
     employee = models.ForeignKey(
@@ -155,20 +156,21 @@ class LeaveRequest(CoreModel):
 
     def __str__(self):
         return f"{self.employee.name} - {self.leave_type.name}"
-    
+
     def get_holidays(self):
         week_mask = "Sat Sun"
         holidays = set(Holiday.get_holidays_between(self.from_date, self.to_date))
-        weekends = set(pd.bdate_range(
-            start=self.from_date,
-            end=self.to_date,
-            freq="C",
-            weekmask=week_mask,
-        ).to_list())
+        weekends = set(
+            pd.bdate_range(
+                start=self.from_date,
+                end=self.to_date,
+                freq="C",
+                weekmask=week_mask,
+            ).to_list()
+        )
         holidays = holidays.union(weekends)
         print(list(holidays))
         return list(holidays)
-
 
     @classmethod
     def get_consumed_leaves(cls, employee: Employee, leave_type: LeaveType) -> int:
@@ -185,11 +187,13 @@ class LeaveRequest(CoreModel):
         days = (self.to_date - self.from_date).days
         holidays = len(self.get_holidays())
         req_days = days - holidays
-        print(f"available leaves - {self.employee.get_available_leaves(self.leave_type)}, req_days - {req_days}")
+        print(
+            f"available leaves - {self.employee.get_available_leaves(self.leave_type)}, req_days - {req_days}"
+        )
         if self.employee.get_available_leaves(self.leave_type) < req_days:
             return False
         return True
-    
+
     def create_leaves(self):
         days = set(pd.date_range(self.from_date, self.to_date, freq="D").to_list())
         holidays = set(self.get_holidays())

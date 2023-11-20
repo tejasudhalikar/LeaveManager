@@ -9,8 +9,10 @@ from ..models.models import Employee, LeaveRequest, LeaveType
 
 class LeaveRequestApproveView(CreateView):
     model = LeaveRequest
+
     def get(self, request, *args, **kwargs):
         ...
+
 
 class LeaveRequestDeleteView(DeleteView):
     model = LeaveRequest

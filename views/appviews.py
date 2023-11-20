@@ -1,6 +1,6 @@
 from django.shortcuts import redirect
 from django.views.generic import ListView, TemplateView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView
 
 from ..forms.forms import LeaveRequestForm
 

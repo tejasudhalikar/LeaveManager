@@ -1,5 +1,4 @@
 from datetime import datetime, date as dtdate
-from dateutil.relativedelta import relativedelta
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
@@ -188,7 +187,10 @@ class LeaveRequest(CoreModel):
         holidays = len(self.get_holidays())
         req_days = days - holidays
         print(
-            f"available leaves - {self.employee.get_available_leaves(self.leave_type)}, req_days - {req_days}"
+            (
+                f"available leaves - {self.employee.get_available_leaves(self.leave_type)}",
+                f", req_days - {req_days}"
+            )
         )
         if self.employee.get_available_leaves(self.leave_type) < req_days:
             return False
